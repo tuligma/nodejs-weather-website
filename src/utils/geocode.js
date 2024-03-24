@@ -1,7 +1,9 @@
 const request = require('request')
 
+const geocodeApiKey = process.env.GEOCODE_API_KEY
+
 const geocode = (address, callback) => {
-	const url = `https://api.maptiler.com/geocoding/${encodeURIComponent(address)}.json?key=6RNW1KaPZEUhJZYGBt0Q&limit=1`
+	const url = `https://api.maptiler.com/geocoding/${encodeURIComponent(address)}.json?key=${geocodingApiKey}&limit=1`
 
 	request({url, json: true}, (error, {body} = {}) => {
 		if (error) {
