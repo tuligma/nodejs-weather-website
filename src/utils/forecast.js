@@ -14,7 +14,7 @@ const forecast = (lat, lon, callback) => {
 			const temp = body.main
 			const description = body.weather[0].description
 			const modifiedDesc = description.charAt(0).toUpperCase() + description.slice(1)
-			const liveForcast = `${modifiedDesc}. It is currently ${temp.temp}°C. It feels like ${temp.feels_like}°C out.`
+			const liveForcast = `${modifiedDesc}. <br> It is currently ${temp.temp}°C with recorded temperature of min: ${temp.temp_min}°C and max: ${temp.temp_max}°C.<br> It feels like ${temp.feels_like}°C out.`
 			callback(undefined, liveForcast)
 		}
 	})
