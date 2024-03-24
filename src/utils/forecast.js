@@ -1,7 +1,7 @@
+require('dotenv').config()
 const request = require('request')
 
 const forecastApiKey = process.env.FORECAST_API_KEY
-
 const forecast = (lat, lon, callback) => {
 	const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${forecastApiKey}`
 
